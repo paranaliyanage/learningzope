@@ -1,6 +1,6 @@
-#student.py - Class represents a GSoC student
+#mentor.py - Class represnts a GSoC mentor
 
-class Student:
+class Mentor:
     def __init__(self,id,name):
         self.id = id
         self.name = name
