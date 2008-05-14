@@ -1,6 +1,8 @@
 #google.py - Select projects and stores them in the database
-
-from testzodb import TestZODB, transaction
+import sys
+sys.path.append("D:\GSOC\code\google") #change according to your path
+from simple_string.testzodb import TestZODB, transaction
+#from testzodb import TestZODB, transaction
 from organization import Organization
 from mentor import Mentor
 from student import Student

@@ -1,5 +1,8 @@
 #retrieve.py - Retrieve a object and change attributes
-from testzodb import TestZODB, transaction
+import sys
+sys.path.append("D:\GSOC\code\google") #change according to your path
+from simple_string.testzodb import TestZODB, transaction
+#from testzodb import TestZODB, transaction
 from organization import Organization
 from mentor import Mentor
 from student import Student
@@ -17,7 +20,8 @@ organization3.addProject(project31)
 dbroot['org3'] = organization3
 
 retrieveorg = dbroot['org1']
-retrieveorg.addMentor('Sidnei da Silva')
+othermentor = Mentor(6,'Sidnei da Silva')
+retrieveorg.addMentor(othermentor)
 
 transaction.commit()
 db.close()

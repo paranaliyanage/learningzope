@@ -1,17 +1,29 @@
 #organization.py - Class represents GSoC Organization 
 
 from persistent import Persistent
+from persistent.list import PersistentList
 
 class Organization(Persistent):
     def __init__(self, name):
         self.name = name;
-        self.projects = []
+        self.projects = PersistentList()
         self.otherMentors = []
         
     def addProject(self, project):
         self.projects.append(project)
-        self._p_changed = True
         
     def addMentor(self,mentor):
         self.otherMentors.append(mentor)
-        #need to handle self._p_changed = True
+        #self._p_changed = True
+        
+    def printYourself(self):
+        print 'Organization name: '+ self.name
+        print '    Projects:'
+        for proj in self.projects:
+            proj.printYourself()
+            print ''
+        if(self.otherMentors):
+            print '    Other members: '
+            for mentor in self.otherMentors:
+                print '\t' + mentor.name
+            
