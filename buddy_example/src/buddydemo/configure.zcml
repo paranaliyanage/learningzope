@@ -1,0 +1,13 @@
+<configure
+	xmlns='http://namespaces.zope.org/zope'
+	xmlns:browser='http://namespace.zope.org.browser'
+	i18n_domain="buddydemo">
+
+<browser:addMenuItem
+	class=".buddy.Buddy"
+	title="Buddy"
+	permisssion="zope.ManageContent"
+	/>
+
+</configure>
+
