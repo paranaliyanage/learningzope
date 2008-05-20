@@ -1,0 +1,57 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+    <interface
+        interface=".interfaces.IGsoc"
+        type="zope.app.content.interfaces.IContentType"
+        />
+ 
+    <content class=".gsoc.Gsoc">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <implements
+            interface="zope.app.container.interfaces.IContentContainer"
+            />
+        <factory
+            id="gsoc.Gsoc"
+            description="Gsoc Competition"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IGsoc"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IGsoc"
+            />
+    </content>
+
+    <interface
+        interface=".interfaces.IOrganization"
+        type="zope.app.content.interfaces.IContentType"
+        />
+
+    <content class=".organization.Organization">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <implements
+            interface="zope.app.container.interfaces.IContentContainer"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IOrganization"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IOrganizationContainer"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IOrganization"
+            />
+    </content>
+
+    <include package = ".browser" />
+</configure>
