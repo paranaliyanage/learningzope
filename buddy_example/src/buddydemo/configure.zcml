@@ -1,12 +1,65 @@
 <configure
 	xmlns='http://namespaces.zope.org/zope'
-	xmlns:browser='http://namespace.zope.org.browser'
+	xmlns:browser='http://namespaces.zope.org/browser'
 	i18n_domain="buddydemo">
+
+<content class=".buddy.Buddy">
+	<require permission="zope.View"
+		interface=".interfaces.IBuddy"/>
+	<require permission="zope.ManageContent"
+		set_schema=".interfaces.IBuddy"/>
+	<implements interface="
+		zope.app.annotation.IAttributeAnnotatable"
+	/>
+</content>
+
+<content class=".subpostal.Info">
+	<allow interface=".interfaces.IPostalInfo"/>
+</content>
+
+<utility
+	factory=".subpostal.Lookup"
+	provides=".interfaces.IPostalLookup"
+	permission="zope.Public"
+	/>
+
+<adapter
+	factory=".buddy.BuddyCityState"
+	provides=".interfaces.IPostalInfo"
+	for=".buddy.IBuddy"
+	permission="zope.Public"
+	/>
+
+<browser:page
+	for=".interfaces.IBuddy"
+	name="index.html"
+	template="info.pt"
+	permission="zope.View"
+	class=".browser.BuddyInfo"
+	/>
 
 <browser:addMenuItem
 	class=".buddy.Buddy"
 	title="Buddy"
-	permisssion="zope.ManageContent"
+	permission="zope.ManageContent"
+	view="addBuddy.html"
+	/>
+
+<browser:editform
+	schema=".interfaces.IBuddy"
+	label="Change buddy information"
+	name="edit.html"
+	menu="zmi_views" title="Edit"
+	permission="zope.ManageContent"
+	/>
+
+<browser:addform
+	schema=".interfaces.IBuddy"
+	label="Add buddy information"
+	content_factory=".buddy.Buddy"
+	arguments="first last email address postal_code"
+	name="addBuddy.html"
+	permission="zope.ManageContent"
 	/>
 
 </configure>
