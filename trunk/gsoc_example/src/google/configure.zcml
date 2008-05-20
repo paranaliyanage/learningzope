@@ -1,0 +1,133 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+    <interface
+        interface=".interfaces.IGsoc"
+        type="zope.app.content.interfaces.IContentType"
+        />
+ 
+    <content class=".gsoc.Gsoc">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <implements
+            interface="zope.app.container.interfaces.IContentContainer"
+            />
+        <factory
+            id="google.Gsoc"
+            description="Gsoc Competition"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IGsoc"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IGsoc"
+            />
+    </content>
+
+    <interface
+        interface=".interfaces.IOrganization"
+        type="zope.app.content.interfaces.IContentType"
+        />
+
+    <content class=".organization.Organization">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <implements
+            interface="zope.app.container.interfaces.IContentContainer"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IOrganization"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IOrganizationContainer"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IOrganization"
+            />
+    </content>
+
+    <interface
+        interface=".interfaces.IProject"
+        type="zope.app.content.interfaces.IContentType"
+        />
+
+    <content class=".project.Project">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <require
+            permission="zope.View"
+            interface=".interfaces.IProject"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IProject"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IProject"
+            />
+    </content>
+
+
+    <interface
+        interface=".interfaces.IMentor"
+        type="zope.app.content.interfaces.IContentType"
+        />
+
+    <content class=".mentor.Mentor">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <require
+            permission="zope.View"
+            interface=".interfaces.IMentor"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IMentor"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IMentor"
+            />
+    </content>
+
+    <interface
+        interface=".interfaces.IStudent"
+        type="zope.app.content.interfaces.IContentType"
+        />
+
+    <content class=".student.Student">
+        <implements
+            interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
+            />
+        <require
+            permission="zope.View"
+            interface=".interfaces.IStudent"
+            />
+        <require
+            permission="zope.ManageContent"
+            interface=".interfaces.IStudent"
+            />
+        <require
+            permission="zope.ManageContent"
+            set_schema=".interfaces.IStudent"
+            />
+    </content>
+
+
+
+
+    <include package = ".browser" />
+
+</configure>
+
+
