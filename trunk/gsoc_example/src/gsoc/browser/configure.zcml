@@ -1,0 +1,70 @@
+<configure 
+    xmlns="http://namespaces.zope.org/browser">
+
+    <addform
+        label="Create Gsoc Competition"
+        name="CreateGsocCompetition.html"
+        schema="gsoc.interfaces.IGsoc"
+        content_factory="gsoc.gsoc.Gsoc"
+        fields="description"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="gsoc.gsoc.Gsoc"
+        title="Gsoc Competition"
+        description="Gsoc cometition 2008"
+        permission="zope.ManageContent"
+        view="CreateGsocCompetition.html"
+        />
+
+    <editform
+        schema="gsoc.interfaces.IGsoc"
+        for="gsoc.interfaces.IGsoc"
+        label="Change Competition"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="gsoc.interfaces.IGsoc"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+    <addform
+        label="Add Organization"
+        name="AddOrganization.html"
+        schema="gsoc.interfaces.IOrganization"
+        content_factory="gsoc.organization.Organization"
+        fields="name"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="gsoc.organization.Organization"
+        title="Organization name"
+        description="Organization Name"
+        permission="zope.ManageContent"
+        view="AddOrganization.html"
+        />
+
+    <editform
+        schema="gsoc.interfaces.IOrganization"
+        for="gsoc.interfaces.IOrganization"
+        label="Change Organization"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="gsoc.interfaces.IOrganization"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+</configure>
