@@ -1,0 +1,172 @@
+<configure 
+    xmlns="http://namespaces.zope.org/browser">
+
+    <addform
+        label="Create Gsoc Competition"
+        name="CreateGsocCompetition.html"
+        schema="google.interfaces.IGsoc"
+        content_factory="google.gsoc.Gsoc"
+        fields="description"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="google.gsoc.Gsoc"
+        title="Gsoc Competition"
+        description="Gsoc cometition 2008"
+        permission="zope.ManageContent"
+        view="CreateGsocCompetition.html"
+        />
+
+    <editform
+        schema="google.interfaces.IGsoc"
+        for="google.interfaces.IGsoc"
+        label="Change Competition"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="google.interfaces.IGsoc"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+    <addform
+        label="Add Organization"
+        name="AddOrganization.html"
+        schema="google.interfaces.IOrganization"
+        content_factory="google.organization.Organization"
+        fields="name"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="google.organization.Organization"
+        title="Organization name"
+        description="Organization Name"
+        permission="zope.ManageContent"
+        view="AddOrganization.html"
+        />
+
+    <editform
+        schema="google.interfaces.IOrganization"
+        for="google.interfaces.IOrganization"
+        label="Change Organization"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="google.interfaces.IProject"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+    <addform
+        label="Add Project"
+        name="AddProject.html"
+        schema="google.interfaces.IProject"
+        content_factory="google.project.Project"
+        fields="name"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="google.project.Project"
+        title="Project name"
+        description="Project Name"
+        permission="zope.ManageContent"
+        view="AddProject.html"
+        />
+
+    <editform
+        schema="google.interfaces.IProject"
+        for="google.interfaces.IProject"
+        label="Change Project"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="google.interfaces.IProject"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+    <addform
+        label="Add Student"
+        name="AddStudent.html"
+        schema="google.interfaces.IStudent"
+        content_factory="google.student.Student"
+        fields="name"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="google.student.Student"
+        title="Student name"
+        description="Student Name"
+        permission="zope.ManageContent"
+        view="AddStudent.html"
+        />
+
+    <editform
+        schema="google.interfaces.IStudent"
+        for="google.interfaces.IStudent"
+        label="Change Student"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="google.interfaces.IStudent"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+
+    <addform
+        label="Add Mentor"
+        name="AddMentor.html"
+        schema="google.interfaces.IMentor"
+        content_factory="google.mentor.Mentor"
+        fields="name"
+        permission="zope.ManageContent"
+        />
+
+    <addMenuItem
+        class="google.mentor.Mentor"
+        title="Mentor Name"
+        description="Mentor Name"
+        permission="zope.ManageContent"
+        view="AddMentor.html"
+        />
+
+    <editform
+        schema="google.interfaces.IMentor"
+        for="google.interfaces.IMentor"
+        label="Change Mentor"
+        name="edit.html"
+        permission="zope.ManageContent"
+        menu="zmi_views" title="Edit"
+        />
+
+    <containerViews
+        for="google.interfaces.IMentor"
+        index="zope.View"
+        contents="zope.View"
+        add="zope.ManageContent"
+        />
+
+</configure>
+
+
