@@ -1,9 +1,10 @@
 # -*- coding: UTF-8 -*-
 from zope.interface import implements
 from zope.interface import Interface
+import persistent
 from google.interfaces import IStudent
 
-class Student(Interface):
+class Student(persistent.Persistent):
     """A simple implementation of the gsoc student
     Make sure that the ‘‘Student‘‘ implements the ‘‘IStudent‘‘ interface:
     
@@ -15,7 +16,7 @@ class Student(Interface):
     >>> student = Student()
     >>> student.name
     u''
-    
+ 
     >>> student.name = u'Student Name'
     >>> student.name
     u'Student Name'
@@ -24,4 +25,3 @@ class Student(Interface):
     implements(IStudent)
 
     name = u''
-

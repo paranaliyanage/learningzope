@@ -1,12 +1,13 @@
 # -*- coding: UTF-8 -*-
 from zope.interface import implements
 from zope.interface import Interface
+import persistent
 
 from google.interfaces import IProject
 
 
-class Project(Interface):
-    """A simple implementation of a project .
+class Project(persistent.Persistent):
+    """A simple implementation of a Project .
 
     Make sure that the ``Project`` implements the ``IProject`` interface:
     
@@ -29,6 +30,5 @@ class Project(Interface):
 
     # See google.interfaces.IProject
     name = u''
-#    description = u''
 
 
