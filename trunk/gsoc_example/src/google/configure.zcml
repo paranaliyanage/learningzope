@@ -6,7 +6,7 @@
         interface=".interfaces.IGsoc"
         type="zope.app.content.interfaces.IContentType"
         />
- 
+
     <content class=".gsoc.Gsoc">
         <implements
             interface="zope.app.annotation.interfaces.IAttributeAnnotatable"
@@ -19,7 +19,7 @@
             description="Gsoc Competition"
             />
         <require
-            permission="zope.ManageContent"
+            permission="zope.View"
             interface=".interfaces.IGsoc"
             />
         <require
@@ -41,16 +41,20 @@
             interface="zope.app.container.interfaces.IContentContainer"
             />
         <require
-            permission="zope.ManageContent"
+            permission="zope.View"
             interface=".interfaces.IOrganization"
             />
         <require
             permission="zope.ManageContent"
-            interface=".interfaces.IOrganizationContainer"
+            set_schema=".interfaces.IOrganization"
+            />
+        <require
+            permission="zope.View"
+            interface="zope.app.container.interfaces.IReadContainer"
             />
         <require
             permission="zope.ManageContent"
-            set_schema=".interfaces.IOrganization"
+            interface="zope.app.container.interfaces.IWriteContainer"
             />
     </content>
 
@@ -65,10 +69,6 @@
             />
         <require
             permission="zope.View"
-            interface=".interfaces.IProject"
-            />
-        <require
-            permission="zope.ManageContent"
             interface=".interfaces.IProject"
             />
         <require
@@ -93,10 +93,6 @@
             />
         <require
             permission="zope.ManageContent"
-            interface=".interfaces.IMentor"
-            />
-        <require
-            permission="zope.ManageContent"
             set_schema=".interfaces.IMentor"
             />
     </content>
@@ -116,19 +112,11 @@
             />
         <require
             permission="zope.ManageContent"
-            interface=".interfaces.IStudent"
-            />
-        <require
-            permission="zope.ManageContent"
             set_schema=".interfaces.IStudent"
             />
     </content>
 
 
-
-
     <include package = ".browser" />
 
 </configure>
-
-
