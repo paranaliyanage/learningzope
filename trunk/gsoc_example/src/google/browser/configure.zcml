@@ -94,11 +94,11 @@
         menu="zmi_views" title="Edit"
         />
 
-    <containerViews
+    <schemadisplay
+        name="projectview.html"
+        schema="google.interfaces.IProject"
         for="google.interfaces.IProject"
-        index="zope.View"
-        contents="zope.View"
-        add="zope.ManageContent"
+        permission="zope.View"
         />
 
     <addform
@@ -127,11 +127,11 @@
         menu="zmi_views" title="Edit"
         />
 
-    <containerViews
+    <schemadisplay
+        name="studentview.html"
+        schema="google.interfaces.IStudent"
         for="google.interfaces.IStudent"
-        index="zope.View"
-        contents="zope.View"
-        add="zope.ManageContent"
+        permission="zope.View"
         />
 
 
@@ -161,11 +161,11 @@
         menu="zmi_views" title="Edit"
         />
 
-    <containerViews
+    <schemadisplay
+        name="mentorview.html"
+        schema="google.interfaces.IMentor"
         for="google.interfaces.IMentor"
-        index="zope.View"
-        contents="zope.View"
-        add="zope.ManageContent"
+        permission="zope.View"
         />
 
 </configure>
