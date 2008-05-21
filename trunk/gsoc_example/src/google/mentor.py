@@ -1,10 +1,11 @@
 # -*- coding: UTF-8 -*-
 from zope.interface import implements
 from zope.interface import Interface
+import persistent
 
 from google.interfaces import IMentor
 
-class Mentor(Interface):
+class Mentor(persistent.Persistent):
     """A simple implementation of the gsoc mentor
     Make sure that the ‘‘Mentor‘‘ implements the ‘‘IMentor‘‘ interface:
     
