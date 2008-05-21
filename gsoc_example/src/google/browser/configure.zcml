@@ -1,4 +1,4 @@
-<configure 
+<configure
     xmlns="http://namespaces.zope.org/browser"
     i18n_domain="google">
 
@@ -62,7 +62,7 @@
         />
 
     <containerViews
-        for="google.interfaces.IProject"
+        for="google.interfaces.IOrganization"
         index="zope.View"
         contents="zope.View"
         add="zope.ManageContent"
@@ -169,5 +169,3 @@
         />
 
 </configure>
-
-
