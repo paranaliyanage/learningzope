@@ -71,8 +71,8 @@ class IMentor(Interface):
 #        required=True)
 
     project=Choice(
-        title="Prefered project",
-        vocabulary="vocab_of_IProject",
+        title=u"Prefered project",
+        vocabulary=u"vocab_of_IProject",
         required=False)
 
 class IOrganizationContained(IContained):

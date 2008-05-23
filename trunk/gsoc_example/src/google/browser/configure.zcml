@@ -95,7 +95,7 @@
         />
 
     <schemadisplay
-        name="projectview.html"
+        name="index.html"
         schema="google.interfaces.IProject"
         for="google.interfaces.IProject"
         permission="zope.View"
@@ -128,7 +128,7 @@
         />
 
     <schemadisplay
-        name="studentview.html"
+        name="index.html"
         schema="google.interfaces.IStudent"
         for="google.interfaces.IStudent"
         permission="zope.View"
@@ -162,7 +162,7 @@
         />
 
     <schemadisplay
-        name="mentorview.html"
+        name="index.html"
         schema="google.interfaces.IMentor"
         for="google.interfaces.IMentor"
         permission="zope.View"
