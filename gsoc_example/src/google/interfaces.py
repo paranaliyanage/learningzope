@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import Text, TextLine, Field
+from zope.schema import Text, TextLine, Field, Choice
 from zope.i18nmessageid import MessageFactory
 from zope.app.container.constraints import ContainerTypesConstraint, ItemTypePrecondition
 from zope.app.container.interfaces import IContainer, IContained
@@ -69,6 +69,11 @@ class IMentor(Interface):
 #        description=u"Name of the student",
 #        default=u"",
 #        required=True)
+
+    project=Choice(
+        title="Prefered project",
+        vocabulary="vocab_of_IProject",
+        required=False)
 
 class IOrganizationContained(IContained):
     """Interface that specifies type of objects that can contain in an organization"""

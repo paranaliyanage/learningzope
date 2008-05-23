@@ -2,6 +2,12 @@
     xmlns="http://namespaces.zope.org/zope"
     i18n_domain="google">
 
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.ConcreteVocabulary"
+        name="vocab_of_IProject"
+        />
+
     <interface
         interface=".interfaces.IGsoc"
         type="zope.app.content.interfaces.IContentType"
