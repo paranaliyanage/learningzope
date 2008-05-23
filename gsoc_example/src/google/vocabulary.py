@@ -1,6 +1,8 @@
 from zope import interface
+from zope.security.proxy import removeSecurityProxy
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from google.interfaces import IOrganization
 
 class ContainerVocabulary(SimpleVocabulary):
     interface.classProvides(IVocabularyFactory)
@@ -17,7 +19,7 @@ class ContainerVocabulary(SimpleVocabulary):
         SimpleVocabulary.__init__(self, terms)
     
     def objToTerm(self, objekt):
-        return SimpleTerm(objekt,
+        return SimpleTerm(removeSecurityProxy(objekt),
                           token=objekt.__name__,
                           title=objekt.__name__)
     
@@ -30,7 +32,7 @@ class ContainerVocabulary(SimpleVocabulary):
                 return context
             context=context.__parent__
 
-from google.interfaces import IMentor
+from google.interfaces import IProject
 
 class ConcreteVocabulary(ContainerVocabulary):
-    filter = IMentor
+    filter = IProject
