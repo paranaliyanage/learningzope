@@ -27,5 +27,7 @@ class Mentor(persistent.Persistent):
 
     name = u''
 
+    project=None
+
 
 
