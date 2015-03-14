@@ -1,0 +1,1 @@
+I have been selected for the project, OCQL a Query Language for ZODB (Phase 0)in GSoC 2008. Sample codes I am using for learning Zope is contain here.
